@@ -24,7 +24,7 @@ mongoose.connect(uri,option)
 .then(() => console.log('Base de datos conectada'))
 .catch(e => console.log('error db:', e))
 
-// import routes
+// importar routes
 const authRoutes = require('./routes/auth');
 const dashboadRoutes = require('./routes/dashboard');
 const verifyToken = require('./routes/validate-token');

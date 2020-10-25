@@ -44,7 +44,7 @@ router.post('/login', async (req, res) => {
     })
 });
 
-app.get('/login', (req, res) => {
+router.get('/login', (req, res) => {
     res.json({
         estado: true,
         mensaje: 'Estoy en el metodo GET'

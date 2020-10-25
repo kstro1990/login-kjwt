@@ -42,7 +42,14 @@ router.post('/login', async (req, res) => {
         data: 'exito bienvenido',
         token : {token}
     })
-})
+});
+
+app.get('/login', (req, res) => {
+    res.json({
+        estado: true,
+        mensaje: 'Estoy en el metodo GET'
+    })
+});
 
 router.post('/register', async (req, res) => {
 

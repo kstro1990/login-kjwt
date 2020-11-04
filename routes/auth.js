@@ -42,6 +42,8 @@ router.post('/login', async (req, res) => {
         data: 'exito bienvenido',
         token : {token}
     })
+
+    console.log("Estoy buscando al mmgvo ese");
 });
 
 router.get('/login', (req, res) => {

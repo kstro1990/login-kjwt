@@ -9,7 +9,7 @@ const app = express();
 const cors = require('cors');
 var corsOptions = {
     origin: '*', // Reemplazar con dominio
-    optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+    optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 
 }
 app.use(cors(corsOptions));
 
@@ -32,6 +32,10 @@ const verifyToken = require('./routes/validate-token');
 // route middlewares
 app.use('/api/user', authRoutes);
 app.use('/api/dashboard', verifyToken, dashboadRoutes);
+
+const history = require('connect-history-api-fallback');
+app.use(history());
+app.use(express.static(__dirname + "/public"));
 
 app.get('/', (req, res) => {
     res.json({
